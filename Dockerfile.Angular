@@ -10,8 +10,4 @@ COPY . .
 
 RUN npm run build --prod
 
-FROM nginx:1.15.8-alpine
-
-COPY --from=builder /usr/src/app/dist/preview/ /usr/share/nginx/html
-
-CMD ["npm", "serve"]
+CMD ["npm", "start"]
